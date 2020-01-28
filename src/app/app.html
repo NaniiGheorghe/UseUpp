@@ -1,0 +1,23 @@
+<ion-menu type="overlay" [content]="content">
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+      </ion-title>
+      <div class="menu-title">
+        <img src="assets/images/icon.png"/>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button ion-item *ngFor="let m of menuItems" (click)="executeAction(m)">
+         <ion-icon name="{{m.icon}}" item-start></ion-icon>
+      {{m.title}}   
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content></ion-nav>

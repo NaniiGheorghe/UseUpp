@@ -1,0 +1,72 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Log In Page</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <div text-center class="log-in-text">
+    <img width="120" height="120" src="assets/images/UseUpp.png">
+  </div>
+
+
+  <div text-center class="eneter-in-accout-text">
+    enter in your account
+  </div>
+
+  <ion-item class="input-top">
+    <ion-label>
+      <ion-icon name="md-person"></ion-icon>
+    </ion-label>
+    <ion-input clearInput [(ngModel)]="userEmailData.email" type="text"></ion-input>
+  </ion-item>
+  <ion-item class="input-bottom">
+    <ion-label>
+      <ion-icon name="md-lock"></ion-icon>
+    </ion-label>
+    <ion-input clearInput [(ngModel)]="userEmailData.password" type="password"></ion-input>
+  </ion-item>
+
+  <ion-grid class="create-acout-text">
+    <ion-row>
+      <ion-col class="create-acout-text-margin-left">
+        <div>
+          Forgot your password ?
+        </div>
+      </ion-col>
+      <ion-col class="create-acout-text-margin-right">
+        <div text-right (click)="createNewAccount()">
+          Need an account?
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <button text-center class="continue-button" ion-button round outline large color="white" (click)="logInUsingEmail()">
+       Continue
+      </button>
+
+
+  <div text-center class="sign-in-f-g">
+    or sign in via facebook or google
+  </div>
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button class="loginBtn loginBtn--google" large ion-button (click)="googleLogin()">
+            Google
+            </button>
+      </ion-col>
+      <ion-col>
+        <button class="loginBtn loginBtn--facebook" large ion-button (click)="facebookLogin()">
+           Facebook
+          </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

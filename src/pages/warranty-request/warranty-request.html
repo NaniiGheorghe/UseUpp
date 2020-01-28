@@ -1,0 +1,62 @@
+<!--
+  Generated template for the WarrantyRequestPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Warranty request</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div *ngIf="new">
+    <ion-item>
+      <ion-label stacked>Full name</ion-label>
+      <ion-input type="text" [(ngModel)]="clone.fullName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Email</ion-label>
+      <ion-input type="email" [(ngModel)]="clone.email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Phone number</ion-label>
+      <ion-input type="tel" [(ngModel)]="clone.phoneNumber"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Country</ion-label>
+      <ion-input type="text" [(ngModel)]="clone.country"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>City</ion-label>
+      <ion-input type="text" [(ngModel)]="clone.city"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Adrress</ion-label>
+      <ion-input type="text" [(ngModel)]="clone.address"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Warranty Request</ion-label>
+      <ion-textarea rows="5" placeholder="Enter a message" [(ngModel)]="clone.message"></ion-textarea>
+    </ion-item>
+
+    <button ion-button full margin-top color="secondary" (click)='submit();'>SUBMIT</button>
+  </div>
+
+  <div *ngIf="!new">
+    Your warranty request is being processed. <br/>
+    Request id {{clone.id}}.
+    
+    <button ion-button full margin-top color="secondary" (click)='cancel();'>CANCEL REQUEST</button>
+  </div>
+</ion-content>

@@ -1,0 +1,71 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Log In Page</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <ion-grid no-padding>
+      <ion-row>
+        <ion-col no-margin>
+          <ion-item no-margin>
+            <ion-label stacked> User</ion-label>
+            <ion-input type="text" [(ngModel)]="userEmailData.user"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col margin-left margin-bottom col-auto *ngIf="!userEmailData.userImage">
+          <img float-right width="80" height="80" src="assets/images/choose-photo.png" (click)="accessGallery()" />
+        </ion-col>
+        <ion-col margin-left col-auto *ngIf="userEmailData.userImage ">
+          <img float-right width="80 " height="80 " [src]="userEmailData.userImage " style="border-radius:50%; " (click)="accessGallery()"
+          />
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label stacked> Email Name</ion-label>
+        <ion-input type="text " [(ngModel)]="userEmailData.userEmail"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked> Password Name</ion-label>
+        <ion-input type="password" [(ngModel)]="userEmailData.password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked> Gender</ion-label>
+        <ion-select [(ngModel)]="userEmailData.gender " interface="popover " style="margin-right: auto; ">
+          <ion-option>Male</ion-option>
+          <ion-option>Female</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked> Phone Number</ion-label>
+        <ion-input type="text " [(ngModel)]="userEmailData.userPhoneNumber "></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Country</ion-label>
+        <ion-input type="text " [(ngModel)]="userEmailData.userCountry "></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>City</ion-label>
+        <ion-input type="text " [(ngModel)]="userEmailData.userCity "></ion-input>
+      </ion-item>
+
+    </ion-list>
+    <button ion-button padding large block  class="register-button" (click)="registerEmailUser()">
+        Register
+    </button>
+    <button ion-button padding block class="cancel-button" (click)="cancel()">
+        Cancel
+    </button>
+
+</ion-content>

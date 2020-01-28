@@ -1,0 +1,9 @@
+<span *ngIf="warrantyStatus">
+    <progress-bar [progress]="warrantyStatus.remainingPercentage">      
+    </progress-bar>
+
+    <ion-item>
+      <span item-left [ngClass]="{expired: isExpired}">{{leftText}}</span>
+      <span item-end [ngClass]="{expiring: isExpiring}">{{rightText}}</span>
+    </ion-item>
+</span>

@@ -1,0 +1,34 @@
+<!--
+  Generated template for the ProductDetailsSupportUsermanualPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>User manual</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item no-lines *ngFor="let entry of entries">
+      <span></span>
+      <button ion-button clear item-start icon-left (click)="openFile(entry)">
+        <ion-icon name="open"></ion-icon>
+        {{entry.name}}
+      </button>
+      <button ion-button item-end color="danger" (click)="deleteFile(entry)">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
+  <ion-footer padding>
+    <button ion-button padding block large color="secondary" (click)="uploadManual()">Upload manual</button>
+  </ion-footer>
+
+</ion-content>

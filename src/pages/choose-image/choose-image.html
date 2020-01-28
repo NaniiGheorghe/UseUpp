@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Images for : {{ param }}
+        </ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content ng-init="ionViewLoaded()">
+
+    <ion-grid>
+        <ion-row col-sm *ngFor="let image of returnedImages; let i = index ; ">
+            <ion-col col-sm align-self-center *ngIf="(i + i*2) < returnedImages.length">
+                <img src="{{returnedImages[i + i*2].getSrc()}}" (click)='imageClick(i,0);'>
+            </ion-col>
+            <ion-col col-sm align-self-center *ngIf="(i + (i * 2) +1) < returnedImages.length">
+                <img src="{{returnedImages[i + (i * 2) +1].getSrc()}}" (click)='imageClick(i,1);'/>
+            </ion-col>
+            <ion-col col-sm align-self-center *ngIf="(i + (i * 2) + 2) < returnedImages.length">
+                <img src="{{returnedImages[i + (i * 2) + 2].getSrc()}}" (click)='imageClick(i,2);'/>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <div *ngIf='returnedImages == 0 &&  flagNoFiles == true' class="no-image">No images found for {{param}}</div>
+</ion-content>

@@ -1,5 +1,15 @@
 {
-  "name": "Useupp",
-  "integrations": {},
-  "type": "angular"
+  "name": "UseApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "doctor": {
+    "issues": {
+      "unsaved-cordova-platforms": {
+        "ignored": true
+      }
+    }
+  },
+  "app_id": ""
 }

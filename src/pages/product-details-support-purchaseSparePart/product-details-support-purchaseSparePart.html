@@ -1,0 +1,15 @@
+
+<ion-content padding>
+  <ion-card *ngFor="let sparePart of spareParts()" (click)="sparePartClick(sparePart)">
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img class="img-avatar" [src]="sparePart.srcImage">
+      </ion-avatar>
+      <h2>{{sparePart.name}}</h2>
+      <h2>{{sparePart.brand}}</h2>
+      <h1 item-end>{{sparePart.price}}</h1>
+    </ion-item>
+
+  </ion-card>
+</ion-content>

@@ -1,0 +1,75 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>User Info</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-grid no-padding>
+    <ion-row>
+      <ion-col no-margin>
+        <ion-item no-margin>
+          <ion-label stacked> User </ion-label>
+          <ion-input type="text" [(ngModel)]="userProfile.user"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col margin-left col-auto *ngIf='!userProfile.userImage'>
+        <img float-right width="80" height="80" src="assets/images/user-photo.png" style="border-radius:50%;" />
+      </ion-col>
+      <ion-col margin-left col-auto *ngIf='userProfile.userImage'>
+        <img float-right width="80" height="80" [src]="userProfile.userImage" style="border-radius:50%;" />
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list>
+    <ion-item>
+      <ion-icon name="transgender" item-start></ion-icon>
+      <ion-select [(ngModel)]="userProfile.gender" interface="popover" style="margin-right: auto;">
+        <ion-option>Male</ion-option>
+        <ion-option>Female</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="briefcase" item-start></ion-icon>
+      <ion-input type="text" [(ngModel)]="userProfile.job"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon md="md-at" item-start></ion-icon>
+      <ion-input type="text" [(ngModel)]="userProfile.userEmail"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="phone-portrait" item-start></ion-icon>
+      <ion-input type="text" [(ngModel)]="userProfile.userPhoneNumber"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="pin" item-start></ion-icon>
+      <ion-input type="text" [(ngModel)]="userProfile.userCity"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="flag" item-start></ion-icon>
+      <ion-input type="text" [(ngModel)]="userProfile.userCountry"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="fastforward" item-start></ion-icon>
+      <ion-input type="text" [(ngModel)]="userProfile.providerId"></ion-input>
+    </ion-item>
+
+
+  </ion-list>
+  <button ion-button padding block large class="save-button" (click)="saveChanges()">
+        Save
+    </button>
+  <button ion-button padding block class="logout-button" (click)="logout()">
+        Log Out
+    </button>
+
+</ion-content>

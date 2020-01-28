@@ -1,0 +1,6 @@
+https://forum.ionicframework.com/t/what-keystore-does-ionic-use-to-sign-the-apk/66919/2
+https://stackoverflow.com/questions/39244762/how-to-sign-android-apk-without-android-studio
+http://junerockwell.com/generate-a-release-apk-for-android-ionic/
+https://github.com/RioBus/ionic-app/blob/master/signing/release-signing.properties
+https://forum.ionicframework.com/t/how-to-automatically-sign-android-applications-with-the-ionic-cli/87449
+https://solidfoundationwebdev.com/blog/posts/how-to-automatically-sign-your-android-apk-at-build-time-with-ionic

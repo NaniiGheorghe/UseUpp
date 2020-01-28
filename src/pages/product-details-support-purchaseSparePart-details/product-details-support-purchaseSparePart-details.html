@@ -1,0 +1,18 @@
+<ion-content padding>
+    <div text-center>
+        <img [src]="sparePart.srcImage" />
+    </div>
+
+    <h2 text-center>{{sparePart.header}}</h2>
+    <h2 text-center color="danger">{{sparePart.price}}</h2>
+
+    <div class="separator"></div>
+
+    <h5>Description :</h5>
+
+    <h6>{{sparePart.description}}</h6>
+
+    <button clss="btns" large ion-button full color="danger" (click)="push()">Buy It Now</button>
+
+
+</ion-content>

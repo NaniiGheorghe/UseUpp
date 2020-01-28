@@ -1,0 +1,72 @@
+<!-- Generated template for the EditProductComponent component -->
+<div>
+  <div text-center>
+    <img width="80" height="80" src="assets/images/product.png" *ngIf="product.srcImage == null" />
+    <img width="80" height="80" src="{{product.srcImage}}" *ngIf="product.srcImage != null" style="border-radius:50%;" (click)='goToSearchImagePage();'
+    />
+  </div>
+
+  <ion-item *ngIf="showProductDetails">
+      <ion-label stacked>Product name</ion-label>
+      <ion-input type="text" [(ngModel)]="product.name" placeholder="(Ex. PlayStation 4))" (change)="searchImage()"></ion-input>
+    </ion-item>
+  
+  <ion-item *ngIf="showProductDetails">
+    <ion-label stacked>Product brand</ion-label>
+    <ion-input type="text" [(ngModel)]="product.brand" placeholder="(Ex. Sony)" (change)="searchImage()"></ion-input>
+  </ion-item>
+
+  <ion-item *ngIf="showProductDetails">
+    <ion-label stacked>Category</ion-label>
+    <ion-select [(ngModel)]="product.categoryId" interface="popover">
+      <ion-option *ngFor="let c of categories" [value]="c.id">{{c.name}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item *ngIf="showProductDetails">
+    <ion-label stacked>Barcode</ion-label>
+    <ion-input type="text" [(ngModel)]="product.barcode"></ion-input>
+  </ion-item>
+
+  <ion-item *ngIf="showWarrantyDetails">
+    <ion-label stacked>Warranty period</ion-label>
+    <ion-select [(ngModel)]="product.warrantyPeriod" interface="popover">
+      <ion-option value="12">1 Year (12 months)</ion-option>
+      <ion-option value="24">2 Years (24 months)</ion-option>
+      <ion-option value="36">3 Years (36 months)</ion-option>
+      <ion-option value="48">4 Years (48 months)</ion-option>
+      <ion-option value="60">5 Years (60 months)</ion-option>
+      <ion-option value="120">10 Years (120 months)</ion-option>
+      <ion-option value="-1">Lifetime Warranty</ion-option>
+      <ion-option value="-2">Other</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item *ngIf="showWarrantyDetails">
+    <ion-label stacked>Warranty provider</ion-label>
+    <ion-input type="text" [(ngModel)]="product.provider"></ion-input>
+  </ion-item>
+
+  <ion-item *ngIf="showWarrantyDetails">
+    <ion-label stacked>Purchase date</ion-label>
+    <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="product.purchaseDate"></ion-datetime>
+  </ion-item>
+
+  <ion-item *ngIf="showWarrantyDetails">
+    <ion-label stacked>Place of purchase</ion-label>
+    <ion-input type="text" [(ngModel)]="product.placeOfPurchase"></ion-input>
+  </ion-item>
+
+  <ion-item *ngIf="showWarrantyDetails">
+    <ion-label stacked>Currency</ion-label>
+    <ion-select [(ngModel)]="product.priceCurrency" interface="popover">
+      <ion-option *ngFor="let currency of currencies" [value]="currency">{{currency}}</ion-option>
+      <ion-option value="EUR">EUR</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item *ngIf="showWarrantyDetails">
+    <ion-label stacked>Price</ion-label>
+    <ion-input type="number" [(ngModel)]="product.priceAmount"></ion-input>
+  </ion-item>
+</div>
