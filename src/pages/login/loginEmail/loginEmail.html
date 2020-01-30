@@ -7,25 +7,22 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-grid no-padding>
-      <ion-row>
-        <ion-col no-margin>
-          <ion-item no-margin>
-            <ion-label stacked> User</ion-label>
-            <ion-input type="text" [(ngModel)]="userEmailData.user"></ion-input>
-          </ion-item>
+    <ion-grid padding>
+      <ion-row class="center" >
+        <ion-col margin-bottom col-auto *ngIf="!userEmailData.userImage">
+          <img float-right width="80" height="80" src="assets/images/choose-photo.png" (click)="accessGallery()"/>
         </ion-col>
-        <ion-col margin-left margin-bottom col-auto *ngIf="!userEmailData.userImage">
-          <img float-right width="80" height="80" src="assets/images/choose-photo.png" (click)="accessGallery()" />
-        </ion-col>
-        <ion-col margin-left col-auto *ngIf="userEmailData.userImage ">
-          <img float-right width="80 " height="80 " [src]="userEmailData.userImage " style="border-radius:50%; " (click)="accessGallery()"
-          />
+        <ion-col  col-auto *ngIf="userEmailData.userImage ">
+          <img float-right width="80 " height="80 " [src]="userEmailData.userImage " style="border-radius:50%; " (click)="accessGallery()"/>
         </ion-col>
       </ion-row>
     </ion-grid>
 
-    <ion-list>
+    <ion-list>      
+      <ion-item>
+        <ion-label stacked> User</ion-label>
+        <ion-input type="text" [(ngModel)]="userEmailData.user"></ion-input>
+      </ion-item>
 
       <ion-item>
         <ion-label stacked> Email Name</ion-label>
@@ -33,7 +30,7 @@
       </ion-item>
 
       <ion-item>
-        <ion-label stacked> Password Name</ion-label>
+        <ion-label stacked> Password</ion-label>
         <ion-input type="password" [(ngModel)]="userEmailData.password"></ion-input>
       </ion-item>
 

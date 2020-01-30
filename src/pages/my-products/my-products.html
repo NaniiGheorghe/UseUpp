@@ -6,13 +6,13 @@
 -->
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>
-      My Products
-    </ion-title>
+    <ion-navbar>
+      <button ion-button menuToggle  icon-only icon-left>
+        <ion-icon name="menu" persistent="true"></ion-icon>
+      </button>    
+    </ion-navbar> 
   </ion-navbar>
+  
   <div class="userPanel" text-center *ngIf='!userProfile'>
     <img width="80" height="80" src="assets/images/user-photo.png" (click)="login()" />
     <div><button class="button" color="dark" ion-button (click)="login()">Log In</button></div>

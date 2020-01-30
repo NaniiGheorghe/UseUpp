@@ -31,7 +31,7 @@ export class WarrantyStatusComponent {
     if (warrantyStatus != null) {
       if (warrantyStatus.remainingDays > 0) {
         this.leftText = 'Expires on ' + warrantyStatus.endDate.toISOString().slice(0,10);
-        this.rightText = warrantyStatus.remainingDays + " days remaining";
+        //this.rightText = warrantyStatus.remainingDays + " days remaining";
 
         if (warrantyStatus.remainingDays < 31) {
           this.isExpiring = true;

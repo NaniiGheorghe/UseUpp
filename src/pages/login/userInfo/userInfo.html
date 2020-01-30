@@ -7,14 +7,8 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-grid no-padding>
-    <ion-row>
-      <ion-col no-margin>
-        <ion-item no-margin>
-          <ion-label stacked> User </ion-label>
-          <ion-input type="text" [(ngModel)]="userProfile.user"></ion-input>
-        </ion-item>
-      </ion-col>
+  <ion-grid padding>
+    <ion-row class="center">
       <ion-col margin-left col-auto *ngIf='!userProfile.userImage'>
         <img float-right width="80" height="80" src="assets/images/user-photo.png" style="border-radius:50%;" />
       </ion-col>
@@ -25,6 +19,12 @@
   </ion-grid>
 
   <ion-list>
+
+    <ion-item>
+      <ion-icon name="contact" item-start></ion-icon>
+      <ion-input type="text" [(ngModel)]="userProfile.user"></ion-input>
+    </ion-item>
+
     <ion-item>
       <ion-icon name="transgender" item-start></ion-icon>
       <ion-select [(ngModel)]="userProfile.gender" interface="popover" style="margin-right: auto;">
@@ -39,7 +39,7 @@
     </ion-item>
 
     <ion-item>
-      <ion-icon md="md-at" item-start></ion-icon>
+      <ion-icon name="mail" item-start></ion-icon>
       <ion-input type="text" [(ngModel)]="userProfile.userEmail"></ion-input>
     </ion-item>
 
