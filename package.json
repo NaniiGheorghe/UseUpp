@@ -55,7 +55,7 @@
         "cordova-plugin-globalization": "1.0.7",
         "cordova-plugin-googlemaps": "^2.6.2",
         "cordova-plugin-googleplus": "^5.3.2",
-        "cordova-plugin-inappbrowser": "^1.7.1",
+        "cordova-plugin-inappbrowser": "^4.0.0",
         "cordova-plugin-nativegeocoder": "^2.0.5",
         "cordova-plugin-request-location-accuracy": "^2.3.0",
         "cordova-plugin-splashscreen": "^4.1.0",
